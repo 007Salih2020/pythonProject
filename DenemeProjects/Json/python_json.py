@@ -66,7 +66,7 @@ print("- - -  - - - - - - ")
 #
 ## serializing Json = encoding
 ''' 
-with open("smaple.json", "w") as p:
+with open("sample.json", "w") as p:
     json.dump(var,p)
 
 
@@ -170,11 +170,11 @@ import json
 
 # Now we have to request our JSON data through
 # the API package
-res = requests.get("https://jsonplaceholder.typicode.com / todos")
+res = requests.get("https://jsonplaceholder.typicode.com/todos")
 var = json.loads(res.text)
 
 # To view your Json data, type var and hit enter
-var
+# var
 
 # Now our Goal is to find the User who have
 # maximum completed their task !!
@@ -189,18 +189,22 @@ var
 # }
 
 # Note that there are multiple users with  unique id, and their task have respective  Boolean Values.
+users = []
+for user in var:
+	users.append(user["userId"])
 
 def find(todo):
-	check = todo["completed"]
+	check   = todo["completed"]
 	max_var = todo["userId"] in users
 	return check and max_var
 
 # To find the values.
 
-Value = list(filter(find, todos))
+Value = list(filter(find, var))
+print(Value)
 
 # To write these value to your disk
 
 with open("sample.json", "w") as data:
-	Value = list(filter(keep, todos))
+	Value = list(filter(max, users))
 	json.dump(Value, data, indent = 2)
