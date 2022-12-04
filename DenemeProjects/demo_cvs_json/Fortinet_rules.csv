@@ -1,0 +1,35 @@
+﻿ID;name;source;destination;incoming Interface;Outgoing Interface;comment;Date Created
+204;snet-shd-c_to_snet-db-d;net_10.60.1.0_24_hub-shared-server;net_10.60.24.0_25_vnet-db-d;port2;port2;Range for source : 10.60.1.1 - 10.60.1.254  -  Range for the destination: 10.60.24.1 - 10.60.24.127;"created on 08.11.2022; we are investigating"
+203;route-snet-aks0_to_vnet-spoke-gwc-p;route-snet-aks0-p-10.61.50.0_23;route-snet-db-p-10.61.0.0_25;port2;port2;"source range : 10.61.50.1 - 10.61.51.254 - dest range : 10.61.0.1 - 10.61.0.126. route-snet-aks0_to_vnet-spoke-gwc-p	
+source route-snet-aks0-p-10.61.50.0_23 (name on forti net_10.61.50.0_23_dat-prod-aks-0-gwc)	
+destination : route-snet-db-p-10.61.0.0_25 (name on forti net_10.61.0.0_25_sep-prod-dblayer-gwc)";created on 09.11.2022
+205;vnet-spoke-c_to_prod-aks-0;vnet-spoke-gwc-p (10.61.0.0/20) ;prod-network-gwc / subnet: prod-aks-0 /  (10.61.56.7);port2;port2;source range: 10.60.1.1 -10.60.1.254   dest. range:    10.61.50.1 - 10.61.51.254    ;created on 10.11.2022
+206;vnet-spoke-c_to_snet-infra-s;vnet-spoke-gwc-p (10.61.0.0/20) ;vnet-spoke-gwc-s/snet-infra-s-10.60.32.128_27;port2;port2;source range: 10.60.1.1 -10.60.1.254   dest. range:  10.60.32.1 -   10.60.32.254  ;created on 10.11.2022
+207;vnet-spoke-c_to_snet-dev-dblayer;vnet-spoke-gwc-p (10.61.0.0/20) ;vnet-net-d-005/snet-net-d-dev-dblayer;port2;port2;source range: 10.60.1.1 -10.60.1.254   dest. range:      10.60.72.1  -  10.60.72.254;created on 10.11.2022
+208;vnet-spoke-c_to_snet-p-app;vnet-spoke-gwc-p (10.61.0.0/20) ;vnet-net-p-001/snet-net-p-app;port2;port2;source range: 10.60.1.1 -10.60.1.254   dest. range:    10.61.57.1   - 10.61.57.254      ;created on 10.11.2022
+209;vnet-spoke-c_to_snet-net-t-prod-infra;vnet-spoke-gwc-p (10.61.0.0/20) ;vnet-net-t-001/snet-net-t-Prod-infra;port2;port2;source range: 10.60.1.1 -10.60.1.254   dest. range:    10.61.68.1     -       10.61.68.254  ;created on 10.11.2022
+210;prod-svclayer_to_snet-d-dev-dblayer;snet-net-p-prod-svclayer-webapps;vnet-net-d-005/snet-net-d-dev-dblayer;port2;port2;source range: 10.60.1.1   - 10.60.1.254    dest. range:  10.60.72.1   -  10.60.72.254   ;created on 11.11.2022
+211;prod-svc-sql_to_snet-d-dev-dblayer;snet-net-p-prod-svclayer-sqlinstance;vnet-net-d-005/snet-net-d-dev-dblayer;port2;port2;source range: 10.60.1.1   - 10.60.1.254    dest. range:  10.60.72.1   -  10.60.72.254   ;created on 11.11.2022
+212;pr-privlyr-pe_to_snet-d-dev-dblayer;snet-net-p-prod-privlayer-private-endpoint;vnet-net-d-005/snet-net-d-dev-dblayer;port2;port2;source range: 10.60.1.1   - 10.60.1.254    dest. range:  10.60.72.1   -  10.60.72.254   ;created on 11.11.2022
+213;prod-svc-webap_to_snet-infra-p;snet-net-p-prod-svclayer-webapps;vnet-spoke-gwc-p/snet-infra-p-10.61.0.128_25;port2;port2;source range: 10.60.1.1   - 10.60.1.254    dest. range:  10.61.0.1       - 10.61.0.254  ;created on 11.11.2022
+214;prod-svc-sql_to_net-infra-p;snet-net-p-prod-svclayer-sqlinstance;vnet-spoke-gwc-p/snet-infra-p-10.61.0.128_25;port2;port2;source range: 10.60.1.1   - 10.60.1.254    dest. range:  10.61.0.1       - 10.61.0.254  ;created on 11.11.2022
+215;pr-privlyr-pe_to_net-infra-p;snet-net-p-prod-privlayer-private-endpoint;vnet-spoke-gwc-p/snet-infra-p-10.61.0.128_25;port2;port2;source range: 10.60.1.1  - 10.60.1.254    dest. range:  10.61.0.1       - 10.61.0.254  ;created on 11.11.2022
+216;snet-shd-c_to_ snet-db-d2;vnet-hub-gwc-c/snet-shd-c-10.60.1.0_24;vnet-spoke-gwc-d/snet-db-d-10.60.48.0_27;port2;port2;source range: 10.60.1.1  - 10.60.1.254    dest. range:  10.60.48.1  - 10.60.48.254    ;created on 14.11.2022
+217;snet-shd-c_to_ snet-db-d3;vnet-hub-gwc-c/snet-shd-c-10.60.1.0_24;vnet-spoke-gwc-d/snet-db-d-10.60.24.0_25;port2;port2;source range: 10.60.1.1  - 10.60.1.254    dest. range:  10.60.24.1   - 10.60.24.254     ;created on 14.11.2022
+218;snet-shd-c_to_ snet-db-d4;vnet-hub-gwc-c/snet-shd-c-10.60.1.0_24;vnet-spoke-gwc-d/snet-db-d-10.60.24.0_25;port2;port2;source range: 10.60.1.1 - 10.60.1.254    dest. range:  10.60.48.1  - 10.60.48.254    ;created on 14.11.2022
+219;snet-shd-c_to_ snet-prod-dblayer;vnet-hub-gwc-c/snet-shd-c-10.60.1.0_24;vnet-net-t-001/snet-net-t-Prod-DBlayer;port2;port2;source range: 10.60.1.1   - 10.60.1.254    dest. range:  10.61.68.1   - 10.61.68.254  ;created on 14.11.2022
+220;snet-aks-d_to_ snet-shd-c;snet-aks0-d-10.60.28.0_22;vnet-hub-gwc-c/snet-shd-c-10.60.1.0_24;port2;port2;source range:  10.60.28.1 - 10.60.28.254    dest. range:  10.60.1.1   -  10.60.1.254 ;created on 14.11.2022
+222; snet-aks0-s_to_snet-shd-c-1;snet-aks0-s-10.60.70.0_23;vnet-spoke-weu-c/snet-shd-c-10.60.3.0_25;port2;port2;source range:  10.60.70.1 - 10.60.70.254      dest. range:  10.60.3.1  -  10.60.3.254   ;created on 15.11.2022
+223; snet-aks0-s_to_snet-shd-c-2;snet-aks0-p-10.61.50.0_23;vnet-spoke-weu-c/snet-shd-c-10.60.3.0_25;port2;port2;with mask 23 source range: 10.61.50.1  - 10.61.51.254     dest. range:  10.60.3.1  -  10.60.3.254   ;created on 15.11.2022
+224; snet-aks0-s_to_snet-net-t-prod-infr;snet-aks0-p-10.61.50.0_23;vnet-net-t-001/snet-net-t-Prod-infra;port2;port2;with mask 23 source range: 10.61.50.1  - 10.61.51.254     dest. range:  10.60.3.1  -  10.60.3.254   ;created on 15.11.2022
+225; snet-aks0-s_to_snet-shd-c-3;snet-aks0-p-10.61.8.0_21;vnet-spoke-weu-c/snet-shd-c-10.60.3.0_25;port2;port2;source range:  10.61.8.1  - 10.61.8.254      dest. range:  10.60.3.1  -  10.60.3.254   ;created on 15.11.2022
+226; snet-aks0-s_to_snet-net-p-app;snet-aks0-p-10.61.8.0_21;vnet-net-p-001/snet-net-p-app;port2;port2;source range:  10.61.9.1  - 10.61.9.254      dest. range:  10.61.57.1    - 10.61.57.254 ;created on 15.11.2022
+;;;;;; ;
+; ; ; ; ; ; ;
+; ; ; ; ; ; ;
+;;;;;; ;
+;;;;;; ;
+;;;;;;;
+;; ; ; ; ;;
+;; ; ; ; ;;
+;;;; ;;;

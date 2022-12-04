@@ -1,0 +1,322 @@
+[
+    {
+        "\ufeffID": "204",
+        "name": "snet-shd-c_to_snet-db-d",
+        "source": "net_10.60.1.0_24_hub-shared-server",
+        "destination": "net_10.60.24.0_25_vnet-db-d",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "Range for source : 10.60.1.1 - 10.60.1.254  -  Range for the destination: 10.60.24.1 - 10.60.24.127",
+        "Date Created": "created on 08.11.2022; we are investigating"
+    },
+    {
+        "\ufeffID": "203",
+        "name": "route-snet-aks0_to_vnet-spoke-gwc-p",
+        "source": "route-snet-aks0-p-10.61.50.0_23",
+        "destination": "route-snet-db-p-10.61.0.0_25",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range : 10.61.50.1 - 10.61.51.254 - dest range : 10.61.0.1 - 10.61.0.126. route-snet-aks0_to_vnet-spoke-gwc-p\t\nsource route-snet-aks0-p-10.61.50.0_23 (name on forti net_10.61.50.0_23_dat-prod-aks-0-gwc)\t\ndestination : route-snet-db-p-10.61.0.0_25 (name on forti net_10.61.0.0_25_sep-prod-dblayer-gwc)",
+        "Date Created": "created on 09.11.2022"
+    },
+    {
+        "\ufeffID": "205",
+        "name": "vnet-spoke-c_to_prod-aks-0",
+        "source": "vnet-spoke-gwc-p (10.61.0.0/20) ",
+        "destination": "prod-network-gwc / subnet: prod-aks-0 /  (10.61.56.7)",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range: 10.60.1.1\u00a0-10.60.1.254 \u00a0 dest. range:  \u00a0 10.61.50.1 - 10.61.51.254 \u00a0 \u00a0",
+        "Date Created": "created on 10.11.2022"
+    },
+    {
+        "\ufeffID": "206",
+        "name": "vnet-spoke-c_to_snet-infra-s",
+        "source": "vnet-spoke-gwc-p (10.61.0.0/20) ",
+        "destination": "vnet-spoke-gwc-s/snet-infra-s-10.60.32.128_27",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range: 10.60.1.1\u00a0-10.60.1.254 \u00a0 dest. range:\u00a0 10.60.32.1 - \u00a0 10.60.32.254 \u00a0",
+        "Date Created": "created on 10.11.2022"
+    },
+    {
+        "\ufeffID": "207",
+        "name": "vnet-spoke-c_to_snet-dev-dblayer",
+        "source": "vnet-spoke-gwc-p (10.61.0.0/20) ",
+        "destination": "vnet-net-d-005/snet-net-d-dev-dblayer",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range: 10.60.1.1\u00a0-10.60.1.254 \u00a0 dest. range:  \u00a0 \u00a0 10.60.72.1 \u00a0-  10.60.72.254",
+        "Date Created": "created on 10.11.2022"
+    },
+    {
+        "\ufeffID": "208",
+        "name": "vnet-spoke-c_to_snet-p-app",
+        "source": "vnet-spoke-gwc-p (10.61.0.0/20) ",
+        "destination": "vnet-net-p-001/snet-net-p-app",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range: 10.60.1.1\u00a0-10.60.1.254 \u00a0 dest. range:  \u00a0 10.61.57.1 \u00a0 - 10.61.57.254 \u00a0 \u00a0 \u00a0",
+        "Date Created": "created on 10.11.2022"
+    },
+    {
+        "\ufeffID": "209",
+        "name": "vnet-spoke-c_to_snet-net-t-prod-infra",
+        "source": "vnet-spoke-gwc-p (10.61.0.0/20) ",
+        "destination": "vnet-net-t-001/snet-net-t-Prod-infra",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range: 10.60.1.1\u00a0-10.60.1.254 \u00a0 dest. range:  \u00a0 10.61.68.1 \u00a0 \u00a0 -  \u00a0 \u00a0 \u00a010.61.68.254 \u00a0",
+        "Date Created": "created on 10.11.2022"
+    },
+    {
+        "\ufeffID": "210",
+        "name": "prod-svclayer_to_snet-d-dev-dblayer",
+        "source": "snet-net-p-prod-svclayer-webapps",
+        "destination": "vnet-net-d-005/snet-net-d-dev-dblayer",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range: 10.60.1.1\u00a0 \u00a0- 10.60.1.254 \u00a0\u00a0 dest. range:  10.60.72.1 \u00a0 -  10.60.72.254\u00a0 \u00a0",
+        "Date Created": "created on 11.11.2022"
+    },
+    {
+        "\ufeffID": "211",
+        "name": "prod-svc-sql_to_snet-d-dev-dblayer",
+        "source": "snet-net-p-prod-svclayer-sqlinstance",
+        "destination": "vnet-net-d-005/snet-net-d-dev-dblayer",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range: 10.60.1.1\u00a0 \u00a0- 10.60.1.254 \u00a0\u00a0 dest. range:  10.60.72.1 \u00a0 -  10.60.72.254\u00a0 \u00a0",
+        "Date Created": "created on 11.11.2022"
+    },
+    {
+        "\ufeffID": "212",
+        "name": "pr-privlyr-pe_to_snet-d-dev-dblayer",
+        "source": "snet-net-p-prod-privlayer-private-endpoint",
+        "destination": "vnet-net-d-005/snet-net-d-dev-dblayer",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range: 10.60.1.1\u00a0 \u00a0- 10.60.1.254 \u00a0\u00a0 dest. range:  10.60.72.1 \u00a0 -  10.60.72.254\u00a0 \u00a0",
+        "Date Created": "created on 11.11.2022"
+    },
+    {
+        "\ufeffID": "213",
+        "name": "prod-svc-webap_to_snet-infra-p",
+        "source": "snet-net-p-prod-svclayer-webapps",
+        "destination": "vnet-spoke-gwc-p/snet-infra-p-10.61.0.128_25",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range: 10.60.1.1\u00a0 \u00a0- 10.60.1.254 \u00a0\u00a0 dest. range:  10.61.0.1\u00a0 \u00a0 \u00a0\u00a0 - 10.61.0.254 \u00a0",
+        "Date Created": "created on 11.11.2022"
+    },
+    {
+        "\ufeffID": "214",
+        "name": "prod-svc-sql_to_net-infra-p",
+        "source": "snet-net-p-prod-svclayer-sqlinstance",
+        "destination": "vnet-spoke-gwc-p/snet-infra-p-10.61.0.128_25",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range: 10.60.1.1\u00a0 \u00a0- 10.60.1.254 \u00a0\u00a0 dest. range:  10.61.0.1\u00a0 \u00a0 \u00a0\u00a0 - 10.61.0.254 \u00a0",
+        "Date Created": "created on 11.11.2022"
+    },
+    {
+        "\ufeffID": "215",
+        "name": "pr-privlyr-pe_to_net-infra-p",
+        "source": "snet-net-p-prod-privlayer-private-endpoint",
+        "destination": "vnet-spoke-gwc-p/snet-infra-p-10.61.0.128_25",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range: 10.60.1.1\u00a0 - 10.60.1.254 \u00a0\u00a0 dest. range:  10.61.0.1\u00a0 \u00a0 \u00a0\u00a0 - 10.61.0.254 \u00a0",
+        "Date Created": "created on 11.11.2022"
+    },
+    {
+        "\ufeffID": "216",
+        "name": "snet-shd-c_to_ snet-db-d2",
+        "source": "vnet-hub-gwc-c/snet-shd-c-10.60.1.0_24",
+        "destination": "vnet-spoke-gwc-d/snet-db-d-10.60.48.0_27",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range: 10.60.1.1\u00a0\u00a0- 10.60.1.254\u00a0\u00a0\u00a0 dest. range:  10.60.48.1  - 10.60.48.254\u00a0 \u00a0\u00a0",
+        "Date Created": "created on 14.11.2022"
+    },
+    {
+        "\ufeffID": "217",
+        "name": "snet-shd-c_to_ snet-db-d3",
+        "source": "vnet-hub-gwc-c/snet-shd-c-10.60.1.0_24",
+        "destination": "vnet-spoke-gwc-d/snet-db-d-10.60.24.0_25",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range: 10.60.1.1\u00a0\u00a0- 10.60.1.254\u00a0\u00a0\u00a0 dest. range:  10.60.24.1   - 10.60.24.254\u00a0 \u00a0\u00a0\u00a0",
+        "Date Created": "created on 14.11.2022"
+    },
+    {
+        "\ufeffID": "218",
+        "name": "snet-shd-c_to_ snet-db-d4",
+        "source": "vnet-hub-gwc-c/snet-shd-c-10.60.1.0_24",
+        "destination": "vnet-spoke-gwc-d/snet-db-d-10.60.24.0_25",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range: 10.60.1.1\u00a0- 10.60.1.254\u00a0\u00a0\u00a0 dest. range:  10.60.48.1  - 10.60.48.254\u00a0 \u00a0\u00a0",
+        "Date Created": "created on 14.11.2022"
+    },
+    {
+        "\ufeffID": "219",
+        "name": "snet-shd-c_to_ snet-prod-dblayer",
+        "source": "vnet-hub-gwc-c/snet-shd-c-10.60.1.0_24",
+        "destination": "vnet-net-t-001/snet-net-t-Prod-DBlayer",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range: 10.60.1.1\u00a0 \u00a0- 10.60.1.254\u00a0\u00a0\u00a0 dest. range:  10.61.68.1 \u00a0 - 10.61.68.254\u00a0\u00a0",
+        "Date Created": "created on 14.11.2022"
+    },
+    {
+        "\ufeffID": "220",
+        "name": "snet-aks-d_to_ snet-shd-c",
+        "source": "snet-aks0-d-10.60.28.0_22",
+        "destination": "vnet-hub-gwc-c/snet-shd-c-10.60.1.0_24",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range:  10.60.28.1 - 10.60.28.254\u00a0\u00a0\u00a0 dest. range:  10.60.1.1\u00a0  -  10.60.1.254\u00a0",
+        "Date Created": "created on 14.11.2022"
+    },
+    {
+        "\ufeffID": "222",
+        "name": " snet-aks0-s_to_snet-shd-c-1",
+        "source": "snet-aks0-s-10.60.70.0_23",
+        "destination": "vnet-spoke-weu-c/snet-shd-c-10.60.3.0_25",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range:  10.60.70.1 - 10.60.70.254 \u00a0\u00a0\u00a0\u00a0 dest. range:  10.60.3.1\u00a0 -  10.60.3.254\u00a0 \u00a0",
+        "Date Created": "created on 15.11.2022"
+    },
+    {
+        "\ufeffID": "223",
+        "name": " snet-aks0-s_to_snet-shd-c-2",
+        "source": "snet-aks0-p-10.61.50.0_23",
+        "destination": "vnet-spoke-weu-c/snet-shd-c-10.60.3.0_25",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "with mask 23 source range: 10.61.50.1 \u00a0- 10.61.51.254\u00a0\u00a0\u00a0\u00a0 dest. range:  10.60.3.1\u00a0 -  10.60.3.254\u00a0 \u00a0",
+        "Date Created": "created on 15.11.2022"
+    },
+    {
+        "\ufeffID": "224",
+        "name": " snet-aks0-s_to_snet-net-t-prod-infr",
+        "source": "snet-aks0-p-10.61.50.0_23",
+        "destination": "vnet-net-t-001/snet-net-t-Prod-infra",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "with mask 23 source range: 10.61.50.1 \u00a0- 10.61.51.254\u00a0\u00a0\u00a0\u00a0 dest. range:  10.60.3.1\u00a0 -  10.60.3.254\u00a0 \u00a0",
+        "Date Created": "created on 15.11.2022"
+    },
+    {
+        "\ufeffID": "225",
+        "name": " snet-aks0-s_to_snet-shd-c-3",
+        "source": "snet-aks0-p-10.61.8.0_21",
+        "destination": "vnet-spoke-weu-c/snet-shd-c-10.60.3.0_25",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range:  10.61.8.1\u00a0 - 10.61.8.254 \u00a0\u00a0\u00a0\u00a0 dest. range:  10.60.3.1\u00a0 -  10.60.3.254\u00a0 \u00a0",
+        "Date Created": "created on 15.11.2022"
+    },
+    {
+        "\ufeffID": "226",
+        "name": " snet-aks0-s_to_snet-net-p-app",
+        "source": "snet-aks0-p-10.61.8.0_21",
+        "destination": "vnet-net-p-001/snet-net-p-app",
+        "incoming Interface": "port2",
+        "Outgoing Interface": "port2",
+        "comment": "source range:  10.61.9.1  - 10.61.9.254  \u00a0\u00a0\u00a0 dest. range:  10.61.57.1 \u00a0\u00a0 - 10.61.57.254\u00a0",
+        "Date Created": "created on 15.11.2022"
+    },
+    {
+        "\ufeffID": "",
+        "name": "",
+        "source": "",
+        "destination": "",
+        "incoming Interface": "",
+        "Outgoing Interface": "",
+        "comment": " ",
+        "Date Created": ""
+    },
+    {
+        "\ufeffID": "",
+        "name": " ",
+        "source": " ",
+        "destination": " ",
+        "incoming Interface": " ",
+        "Outgoing Interface": " ",
+        "comment": " ",
+        "Date Created": ""
+    },
+    {
+        "\ufeffID": "",
+        "name": " ",
+        "source": " ",
+        "destination": " ",
+        "incoming Interface": " ",
+        "Outgoing Interface": " ",
+        "comment": " ",
+        "Date Created": ""
+    },
+    {
+        "\ufeffID": "",
+        "name": "",
+        "source": "",
+        "destination": "",
+        "incoming Interface": "",
+        "Outgoing Interface": "",
+        "comment": " ",
+        "Date Created": ""
+    },
+    {
+        "\ufeffID": "",
+        "name": "",
+        "source": "",
+        "destination": "",
+        "incoming Interface": "",
+        "Outgoing Interface": "",
+        "comment": " ",
+        "Date Created": ""
+    },
+    {
+        "\ufeffID": "",
+        "name": "",
+        "source": "",
+        "destination": "",
+        "incoming Interface": "",
+        "Outgoing Interface": "",
+        "comment": "",
+        "Date Created": ""
+    },
+    {
+        "\ufeffID": "",
+        "name": "",
+        "source": " ",
+        "destination": " ",
+        "incoming Interface": " ",
+        "Outgoing Interface": " ",
+        "comment": "",
+        "Date Created": ""
+    },
+    {
+        "\ufeffID": "",
+        "name": "",
+        "source": " ",
+        "destination": " ",
+        "incoming Interface": " ",
+        "Outgoing Interface": " ",
+        "comment": "",
+        "Date Created": ""
+    },
+    {
+        "\ufeffID": "",
+        "name": "",
+        "source": "",
+        "destination": "",
+        "incoming Interface": " ",
+        "Outgoing Interface": "",
+        "comment": "",
+        "Date Created": ""
+    }
+]
